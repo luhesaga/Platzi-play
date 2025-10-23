@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.play'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 description = 'Platzi Play API using Spring Boot'
 
 java {
@@ -20,8 +20,26 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    //Documentación
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9'
+
+    // Spring Data JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // LangGhain4j
+    implementation 'dev.langchain4j:langchain4j-open-ai-spring-boot-starter:1.0.0-beta1'
+    implementation 'dev.langchain4j:langchain4j-spring-boot-starter:1.0.0-beta1'
+
+    //MapStruct
+    implementation 'org.mapstruct:mapstruct:1.6.3'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+
 }
 
 tasks.named('test') {
